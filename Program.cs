@@ -204,9 +204,27 @@ namespace ConsoleApplication1
             //LOOP THAT OUTPUTS THE TEAMS INFORMATION
             foreach (SoccerTeam item in sortedSoccerTeam)
             {
+
+                if (iCounter == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    
+                }
+                if(iCounter == 2)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    
+                }
+                if(iCounter == 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    
+                }
+
                 if (item.teamName.Length > 7)
                 {
-                    Console.WriteLine(iCounter + "\t\t\t" + item.teamName + "\t\t\t\t" + item.points);
+                     
+                     Console.WriteLine(iCounter + "\t\t\t" + item.teamName + "\t\t\t\t" + item.points);
                 }
                 else
                 {
