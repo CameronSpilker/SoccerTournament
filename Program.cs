@@ -5,7 +5,7 @@
  * Finally, display the results of the tournament. 
  * Make sure your console output matches the sample screenshot in the requirements below exactly.
  * 
- * Console output matches sample output completely (see screenshot below)
+ * Console output matches sample output completely 
  First letter of each teams's name is capitalized
  Program uses a List object to store the list of teams
  Teams are sorted by the team's points in descending order
@@ -95,12 +95,12 @@ namespace ConsoleApplication1
 
 
 
-            //GATHER HOW MANY TEAMS, it will not allow letters or 0 
+            //Get how many teams, it will not allow letters or 0 
 
             while (!bteamNumber || iTeam == 0)
             {
                 try
-                    {   Console.WriteLine("How many teams?");
+                    {   Console.WriteLine("How many teams will be competing in the Olympic Soccer Tournament?");
                         iTeam = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine();
                         bteamNumber = true;
@@ -116,7 +116,7 @@ namespace ConsoleApplication1
                     
 
 
-                    //THIS MAKES SURE THE USER INPUTS A NUMBER
+                    //This Try catch will make sure they enter a number
                 }
                 catch (Exception)
                 {
@@ -132,7 +132,7 @@ namespace ConsoleApplication1
 
             bool bteamName = false;
 
-            //THIS LOOP WILL GATHER TEAM NAMES AND POINTS
+            //This loop will gather team name and points
             for (int iCount = 1; iCount <= iTeam; iCount++)
             {
 
@@ -158,12 +158,12 @@ namespace ConsoleApplication1
 
                 bool bteamPoints = false;
 
-                //THIS WILL MAKE SURE THAT THE USER INPUTS A INT FOR POINTS
+                //This will make sure they enter a number for points
                 while (!bteamPoints)
                 {
                     try
                     {
-                        Console.WriteLine("Enter " + teamName + "'s points:");
+                        Console.WriteLine("Enter " + teamName + "'s points scored:");
                         points = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine();
                         bteamPoints = true;
@@ -176,7 +176,7 @@ namespace ConsoleApplication1
                     }
 
                 }
-                //GATHERS THE TEAMS INFORMATION AND CREATES A LIST
+                //Gathers the team name and points, puts them into a list
                 SoccerTeam oTeam = new SoccerTeam(teamName, points);
                 lSoccerTeam.Add(oTeam);
 
@@ -184,7 +184,7 @@ namespace ConsoleApplication1
 
             string dash = string.Empty;
 
-            //THIS IS ALL FOR THE OUTPUT DISPLAY
+            //This will display the table
             Console.WriteLine("Here is the sorted list:");
             Console.WriteLine();
 
@@ -197,14 +197,14 @@ namespace ConsoleApplication1
             Console.Write(dash.PadRight(9, '-') + "\t\t\t\t");
             Console.WriteLine(dash.PadRight(6, '-'));
 
-            //SORTS THE LIST IN DESCENDING ORDER
+            //Sorts the teams in descending order by points
             List<SoccerTeam> sortedSoccerTeam = lSoccerTeam.OrderByDescending(lsTeam => lsTeam.points).ToList();
 
 
-            //LOOP THAT OUTPUTS THE TEAMS INFORMATION
+            //This loop will output the position, team name and points
             foreach (SoccerTeam item in sortedSoccerTeam)
             {
-
+                //These if statements will make the top three teams Gold, Silver, and Bronze. It will also reset to the default color
                 if (iCounter == 1)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -236,6 +236,7 @@ namespace ConsoleApplication1
                 }
                 iCounter++;
             }
+            //This leaves the program running until the user decides to exit
             Console.Read();
 
         }
