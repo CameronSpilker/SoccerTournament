@@ -220,6 +220,10 @@ namespace ConsoleApplication1
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     
                 }
+                if(iCounter == 4)
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
 
                 if (item.teamName.Length > 7)
                 {
