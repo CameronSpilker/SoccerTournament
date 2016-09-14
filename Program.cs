@@ -20,11 +20,6 @@
  * Group: 11
  * Date: 9/13/2016
  * */
-
-
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,21 +104,15 @@ namespace ConsoleApplication1
                         {
                             Console.WriteLine("Enter a number more than 0.\n");
                         }
-                       
-
-
-                   
-                    
-
 
                     //This Try catch will make sure they enter a number
-                }
+                     }
                 catch (Exception)
-                {
+                        {
                     Console.WriteLine();
                     Console.WriteLine("You must enter a number.");
                     Console.WriteLine();
-                }
+                        }
 
             }
 
@@ -169,13 +158,14 @@ namespace ConsoleApplication1
                         bteamPoints = true;
                     }
                     catch (Exception)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You must enter a number.");
-                        Console.WriteLine();
-                    }
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You must enter a number.");
+                            Console.WriteLine();
+                        }
 
                 }
+
                 //Gathers the team name and points, puts them into a list
                 SoccerTeam oTeam = new SoccerTeam(teamName, points);
                 lSoccerTeam.Add(oTeam);
@@ -210,16 +200,19 @@ namespace ConsoleApplication1
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     
                 }
+
                 if(iCounter == 2)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     
                 }
+
                 if(iCounter == 3)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     
                 }
+
                 if(iCounter == 4)
                 {
                     Console.ForegroundColor = ConsoleColor.Gray;
@@ -230,10 +223,12 @@ namespace ConsoleApplication1
                      
                      Console.WriteLine(iCounter + "\t\t\t" + item.teamName + "\t\t\t\t" + item.points);
                 }
+
                 else
-                {
-                    Console.WriteLine(iCounter + "\t\t\t" + item.teamName + "\t\t\t\t\t" + item.points);
-                }
+                    {
+                        Console.WriteLine(iCounter + "\t\t\t" + item.teamName + "\t\t\t\t\t" + item.points);
+                    }
+
                 iCounter++;
             }
             //This leaves the program running until the user decides to exit
